@@ -1,0 +1,72 @@
+@import "var.scss";
+@import "global.scss";
+
+a {
+  text-decoration: none;
+}
+.signUp {
+  position: absolute;
+  top: $header-height + 20px;
+  background-color: $color-white;
+  border-radius: 10px;
+  width: 350px;
+  margin-left: 850px;
+  padding: 30px 30px;
+
+  .signUp-head {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .login-btn {
+    @include layout(space-between);
+    button {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .more-sign {
+    margin-top: 50px;
+    h6 {
+      position: relative;
+      margin: 0 0 10px;
+      font-size: 18px;
+      color: #b5b5b5;
+      text-align: center;
+    }
+    ul {
+      margin-bottom: 10px;
+      list-style: none;
+      padding-left: 0;
+    }
+    ul li {
+      margin: 0 5px;
+      display: inline-block;
+    }
+    ul a {
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      display: block;
+      padding-left: 80px;
+    }
+    .icon-weixin {
+      color: #00bb29;
+    }
+    .icon-qq {
+      color: #498ad5;
+    }
+    ul i {
+      font-size: 34px;
+    }
+    .ic-wechat:before {
+      content: "\E604";
+    }
+    .ic-qq_connect:before {
+      content: "\E603";
+    }
+  }
+}

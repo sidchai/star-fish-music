@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sidchai.music.mapper.AdminMapper">
+    <select id="getAdminById" resultType="admin">
+    select
+        id,
+        username,
+        password,
+        gender,
+        avatar,
+        email,
+        birthday,
+        phone,
+        introduce,
+        region,
+        login_count,
+        last_login_time,
+        last_login_ip,
+        status,
+        create_time,
+        update_time,
+        nick_name,
+        qq_number,
+        wechat_number,
+        occupation,
+        github,
+        gitee,
+        role_id,
+        version,
+        deleted
+    from
+        admin
+    where
+        id = #{id}
+    </select>
+
+    <update id="updateAdmin">
+        update
+            admin
+        <trim prefix="set" suffixOverrides=",">
+            <!--<if test="username != null">username = #{username},</if>
+            <if test="password != null">password = #{password},</if>
+            <if test="gender != null">gender= #{gender},</if>
+            <if test="avatar != null">avatar = #{avatar},</if>
+            <if test="email != null">email = #{email},</if>
+            <if test="birthday != null">birthday = #{birthday},</if>
+            <if test="phone != null">phone = #{phone},</if>
+            <if test="introduce != null">introduce = #{introduce},</if>
+            <if test="region != null">region = #{region},</if>
+            <if test="login_count != null">login_count = #{login_count},</if>
+            <if test="last_login_time != null">last_login_time = #{last_login_time},</if>
+            <if test="last_login_ip != null">last_login_ip = #{last_login_ip},</if>
+            <if test="status != null">status = #{status},</if>-->
+            <!--<if test="create_time != null">create_time = #{create_time},</if>
+            <if test="update_time != null">update_time = #{update_time},</if>
+            <if test="nick_name != null">nick_name = #{nick_name},</if>-->
+            <!--<if test="qq_number != null">qq_number = #{qq_number},</if>
+            <if test="wechat_number != null">wechat_number = #{wechat_number},</if>
+            <if test="occupation != null">occupation = #{occupation},</if>
+            <if test="github != null">github = #{github},</if>
+            <if test="gitee != null">gitee = #{gitee},</if>
+            <if test="role_id != null">role_id = #{role_id},</if>
+            <if test="version != null">version = #{version},</if>-->
+            <if test="deleted != null">deleted = #{deleted}</if>
+        </trim>
+        where
+            id = #{id}
+    </update>
+</mapper>

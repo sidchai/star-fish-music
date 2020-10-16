@@ -1,0 +1,53 @@
+spring:
+  profiles:
+    active: dev
+  # 上传配置
+  servlet:
+    multipart:
+      max-file-size: 1024MB
+      max-request-size: 1024MB
+  # mail
+  mail:
+    username: sidchai@qq.com
+    password: password
+    host: smtp.qq.com
+    # 开启验证加密
+    properties:
+      mail:
+        smtp:
+          ssl:
+            enale: true
+  application:
+    name: service-oss,service-sms # 服务名
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config: #配置逻辑删除
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+  type-aliases-package: com.sidchai.music.pojo
+  mapper-locations: classpath:mapper/*.xml
+  
+aliyun:
+  # 阿里云对象存储
+  oss:
+    endpoint:   # 外网访问节点
+    key-id: accessKeyId  # accessKeyId和accessKeySecret是OSS的访问密钥
+    key-secret: accessKeySecret
+    bucket-name: sidchai # Bucket用来管理所存储Object的存储空间
+    suffer-url: # 上传成功后返回的URL
+  # 阿里云短信
+  sms:
+    regionId: cn-hangzhou
+    key-id: accessKeyId            # accessKeyId和accessKeySecret是OSS的访问密钥
+    key-secret: accessKeySecret
+    template-code:         # 短信模板code
+    sign-name:         # 短信签名
+  # 阿里云视频点播
+  vod:
+    key-id: accessKeyId            # accessKeyId和accessKeySecret是OSS的访问密钥
+    key-secret: accessKeySecret
+    template-group-id:  #转码模板组id
+    work-flow-id:   #工作流id

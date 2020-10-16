@@ -1,0 +1,19 @@
+@import "var.scss";
+@import "global.scss";
+
+div,
+ul,
+li {
+  box-sizing: border-box;
+}
+
+.mv {
+  margin: 30px 10%;
+  margin-top: $header-height + 20px;
+  padding-bottom: 50px;
+  background-color: $color-white;
+}
+
+.pagination {
+  @include layout;
+}

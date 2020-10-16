@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sidchai.music.mapper.UserMapper">
+
+    <select id="getUserById" resultType="user">
+    SELECT
+        id,
+        we_chat_openid,
+        qq_openid,
+        username,
+        password,
+        gender,
+        avatar,
+        email,
+        birthday,
+        phone,
+        introduce,
+        login_count,
+        region,
+        last_login_time,
+        last_login_ip,
+        status,
+        create_time,
+        update_time,
+        nick_name,
+        qq_number,
+        wechat_number,
+        occupation,
+        comment_status,
+        ip_source,
+        browser,
+        os,
+        version,
+        deleted
+    FROM
+        `user`
+    WHERE
+        id= #{id}
+    </select>
+
+    <update id="updateUserById">
+        update
+            `user`
+        <trim prefix="set" suffixOverrides=",">
+            <if test="deleted != null">deleted = #{deleted}</if>
+        </trim>
+        where
+            id = #{id}
+    </update>
+</mapper>
